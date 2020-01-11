@@ -1,0 +1,84 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{王一琛}
+
+\basicInfo{
+  \email{2018216138@tju.edu.cn} \textperiodcentered\ 
+  \phone{(+86) 132-1866-2981} \textperiodcentered\ 
+ }
+ 
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{天津大学}}{2018.9 -- 至今 \,\,\,}
+\textit{在读硕士研究生}\ 计算机技术, 预计 2021年毕业
+\datedsubsection{\textbf{河海大学}}{2014.9 -- 2018.6}
+\textit{学士}\ 通信工程
+
+\section{\faUsers\ 项目经历}
+\datedsubsection{\textbf{基于Reactor的多线程网络库 Cyclone} }{}
+\role{C++, Linux}{个人项目}
+\begin{onehalfspacing}
+https://github.com/RaKiRaKiRa/Cyclone
+\begin{itemize}
+  \item 实现对互斥锁、条件变量、线程、线程池、阻塞队列、单例模式、守护进程等常用方法的封装
+  \item 利用双缓冲技术实现线程安全的前后端异步日志系统
+  \item 使用智能指针进行对象管理，减少内存泄漏的可能
+  \item 封装Linux下的timerfd，使用std::set实现定时器，并进一步封装成时间轮用于关闭超时请求
+  \item 使用字节流传输数据，实现应用层缓冲，并实现增加包头解析包头接口，用于防止粘包
+  \item 使用epoll(LT)+非阻塞IO实现Reactor模式，结合one-loop-per-thread模型实现服务器框架，用Round-Robin算法分配连接实现负载均衡
+  \item 使用任务队列解决跨线程调用，并通过eventfd实现线程异步唤醒
+  \item 基于网络库实现静态http服务器，并基于该服务器搭建博客( http://blog.RaKiRaKiRa.top )
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{基于JSON-RPC2.0协议的RPC库 CycloneRPC}}{}
+\role{C++, Linux}{个人项目}
+\begin{onehalfspacing}
+https://github.com/RaKiRaKiRa/CycloneRPC
+\begin{itemize}
+  \item 采用JSON格式的序列化/反序列化方案, 传输协议为JSON-RPC 2.0
+  \item 使用Cyclone网络库提供网络通信连接服务, 向下调用Linux socket API, 向上提供消息回调
+  \item 在应用层使用增加包头的方法解决粘包
+  \item 只需要编写包含调用接口名、参数类型、返回类型的spec.json就可以生成service/client stub，include相应stub就可以接受/发起RPC
+\end{itemize}
+\end{onehalfspacing}
+
+
+\section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 熟练使用C++，熟悉常用数据结构和算法
+  \item 熟悉计算机网络及Socket编程
+  \item 熟悉操作系统，熟悉多线程编程
+  \item 了解Linux内核，Linux常用命令
+  %\item 了解MySQL的常用语句编写、索引和优化
+\end{itemize}
+
+%\section{\faHeartO\ 获奖情况}
+%\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
+%\datedline{其他奖项}{2015}
+
+\section{\faInfo\ 其他}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 技术博客: http://blog.RaKiRaKiRa.top
+  \item GitHub:  \,\,\, \,https://github.com/RaKiRaKiRa
+\end{itemize}
+
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
+\end{document}
