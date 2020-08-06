@@ -28,24 +28,28 @@
 
 \section{\faUsers\ 实习经历}
 \datedsubsection{\textbf{字节跳动}}{2020年3月 -- 至今}
-\role{实习}{字节跳动-互娱研发团队-后端开发工程师}
+\role{实习}{字节跳动-互娱研发-数据策略部门-后端开发工程师}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 参与策略中台建设，将业务中常见场景，即："某情况下做某件事"，抽象成事件/规则/特征/奖励
-  \item 实现可自动生成Client的Thrift RPC调用服务,避免录入新接口时需要重新编译，并使用Mysql记录历史信息，在出现问题时可快速回滚，大大增加平台可用性和策略迭代速度
-  \item 实现策略的版本控制，完善开发上线流程，增加平台的稳定性和开发测试的便利性
-  \item 由于旧系统使用不方便、初次接触的RD上手难度高，对事件/特征/奖励进行改造迁移
+  \item 参与飞盘平台功能建设
   \begin{itemize}
-    \item 实现定时任务系统，支持从指定时间触发文件/Hive/Clickhouse的数据作为事件
-    \item 实现以Tengo脚本作为特征和奖励，大幅度减少RD开发策略时上手难度
-    \item 从事件中剥离出事件源概念用于管理MQ，一个事件可接入多个数据源作为触发器
+    \item 参与平台迁移，将所有数据迁移到新平台，并实现数据管理后端接口
+    \item 完善thrift\_invoker(自动生成client、编译、重启的服务)，包括支持新平台数据、更新kitool版本、支持使用相同IDL文件的PSM调用
+    \item 使飞盘平台策略脚本支持函数继承，简化脚本复杂度
+    \item 将与CRUD相关接口提取到OpenAPI，并通过标签进行鉴权，上游仅可以操作包含上游对应标签的工具
+  \end{itemize}
+  \item 参与飞盘平台安全建设
+  \begin{itemize}
+    \item 完善thrift\_invoker，包括支持支持回滚、安全升级、初次启动时不注册服务发现
+    \item 为飞盘平台策略提供单元测试，保证测试的完备性。
+    \item 实现对敏感资源的权限验证
   \end{itemize}
 \end{itemize}
 \end{onehalfspacing}
 
 \section{\faCogs\ 个人项目}
 \datedsubsection{\textbf{基于Reactor的多线程网络库 Cyclone} }{2019年06月 -- 2019年12月}
-\role{C++, Linux}{https://github.com/RaKiRaKiRa/Cyclone，https://github.com/RaKiRaKiRa/CycloneRPC} 
+\role{C++, Linux}{https://github.com/RaKiRaKiRa/Cyclone} 
 \begin{onehalfspacing}
 \begin{itemize}
   \item 实现对互斥锁、条件变量、线程、线程池、任务队列、单例模式、守护进程、应用层缓存、异步日志等常用方法的封装
@@ -53,17 +57,17 @@
   \item 使用epoll(LT)+非阻塞IO实现Reactor模式，结合one-loop-per-thread模型实现服务器框架，用Round-Robin算法分配连接实现负载均衡
   \item 使用任务队列解决跨线程调用，并通过eventfd实现线程异步唤醒
   \item 基于网络库实现静态http服务器，并基于该服务器搭建博客( http://blog.RaKiRaKiRa.top )
-  \item 基于以JSON-RPC 2.0协议的序列化/反序列化方案实现RPC库
+  \item 基于以JSON-RPC 2.0协议的序列化/反序列化方案实现简易RPC库(github.com/RaKiRaKiRa/Cycl\\noneRPC)
 \end{itemize}
 \end{onehalfspacing}
 
-\section{\faHeartO\ IT技能}
+\section{\faInfo\ IT技能}
 % increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.5ex]
   \item 熟练使用C++，掌握Golang，熟悉常用数据结构和算法
   \item 熟悉计算机网络及Socket编程
   \item 熟悉操作系统，熟悉多线程编程
-  \item 了解Linux内核，了解Redis
+  \item 了解Linux内核，了解Redis，了解MySQL
   %\item 了解MySQL的常用语句编写、索引和优化
 \end{itemize}
 
@@ -73,12 +77,12 @@
 %\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
 %\datedline{其他奖项}{2015}
 
-\section{\faInfo\ 其他}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 技术博客: http://blog.RaKiRaKiRa.top
-  \item GitHub:  \,\,\, \,https://github.com/RaKiRaKiRa
-\end{itemize}
+% \section{\faInfo\ 其他}
+% % increase linespacing [parsep=0.5ex]
+% \begin{itemize}[parsep=0.5ex]
+%   \item 技术博客: http://blog.RaKiRaKiRa.top
+%   \item GitHub:  \,\,\, \,https://github.com/RaKiRaKiRa
+% \end{itemize}
 
 %% Reference
 %\newpage
